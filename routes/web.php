@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('/');
-
-
-/*Auth::routes();
+Auth::routes();
 
 /*asi se definen las rutas */
+Route::get('/', [App\Http\Controllers\LandingController::class, 'index'])->name('/');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/proveedores', [App\Http\Controllers\LandingController::class, 'proveedores'])->name('proveedores');
